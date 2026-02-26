@@ -12,10 +12,13 @@ const Navbar = () => {
   const { user } = useAuth();
   const location = useLocation();
 
+  const isAdmin = user?.email && ['admin@trenchesmeals.com'].includes(user.email);
+
   const links = [
     { to: '/', label: 'Home' },
     { to: '/menu', label: 'Menu' },
     { to: '/orders', label: 'Orders' },
+    ...(isAdmin ? [{ to: '/admin', label: 'Admin' }] : []),
   ];
 
   return (
