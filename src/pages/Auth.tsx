@@ -40,7 +40,8 @@ const Auth = () => {
       if (error) {
         toast.error(error.message);
       } else {
-        toast.success('Account created! Check your email to verify.');
+        toast.success('Account created! Welcome!');
+        navigate(redirect);
       }
     }
     setLoading(false);
